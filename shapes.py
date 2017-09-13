@@ -18,7 +18,7 @@ def add(name, obj):
 
 
 
-def get(name):
+def get_primitive(name):
     tuple_uid_and_obj = data[name]
     uid = tuple_uid_and_obj[0]
     obj = tuple_uid_and_obj[1]
@@ -35,12 +35,12 @@ def get_all():
     container = []
     for elm in data:
         tmp = data[elm]
-        container.append( get(tmp[1].name) )
+        container.append( get_primitive(tmp[1].name) )
     return container
 
 
 
-def get_adr(name):
+def get(name):
     tuple_uid_and_obj = data[name]
     return tuple_uid_and_obj[1]
 

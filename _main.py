@@ -69,21 +69,22 @@ def init():
     wave.set("y2" , 0.5)
     wave.set("height", 0.3)
     wave.set("freq" , 4.0)
+    wave.set("phase", 0.0)
     shapes.add(wave.name , wave)
 
 
 
 def get_primitive(name):
-    tmp = shapes.get(name)
-    return tmp[1] #<- shapes.get returns a tupple. It includes the shape_tag(same as osc_address) and the list of parameters.
+    tmp = shapes.get_primitive(name)
+    return tmp[1] #<- shapes.get_primitive returns a tupple. It includes the shape_tag(same as osc_address) and the list of parameters.
 
 
 def move_ball():
     print "move_ball"
     global ball_posi_a, ball_posi_b, ball_speed
-    ball = shapes.get_adr("ball")
-    arc = shapes.get_adr("arc")
-    wave = shapes.get_adr("wave")
+    ball = shapes.get("ball")
+    arc = shapes.get("arc")
+    wave = shapes.get("wave")
     ball_x = ball.get('x1')
     print ball_x
     if ball_x == ball_posi_a:

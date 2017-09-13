@@ -9,8 +9,8 @@ shapes.add(rect1.name, rect1)
 shapes.print_all()
 
 #Check set UID
-tupple_adr_and_params1 = shapes.get(circle1.name)
-tupple_adr_and_params2 = shapes.get(rect1.name)
+tupple_adr_and_params1 = shapes.get_primitive(circle1.name)
+tupple_adr_and_params2 = shapes.get_primitive(rect1.name)
 assert tupple_adr_and_params1[1][0] == 0
 assert tupple_adr_and_params2[1][0] == 1
 
@@ -25,7 +25,7 @@ for elm in all_obj:
 
 #How to write and reat each shape
 shapes.set("circle1" , "x1", 777.0) #You can set plural parameters with set method
-circle1 = shapes.get_adr("circle1") #You can each shape objects with get_adr method
+circle1 = shapes.get("circle1") #You can each shape objects with get method
 assert circle1.get("x1") == 777.0
 
 
